@@ -1,0 +1,268 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.content {
+  flex: 1;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.panel {
+  background: #020617;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
+}
+
+.panel h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.grid.two-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.role-selector {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.role-buttons {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.15rem;
+  background: #020617;
+  border: 1px solid #1f2937;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #6366f1;
+  border: none;
+  color: white;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+}
+
+button.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.secondary {
+  background: transparent;
+  border-radius: 999px;
+  border: none;
+  padding: 0.45rem 1rem;
+  color: #e5e7eb;
+}
+
+.name-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+input,
+textarea {
+  background: #020617;
+  border-radius: 0.5rem;
+  border: 1px solid #1f2937;
+  padding: 0.5rem 0.75rem;
+  color: #e5e7eb;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.muted {
+  color: #9ca3af;
+  font-size: 0.85rem;
+}
+
+.results {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 2fr) auto;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bar-container {
+  background: #111827;
+  border-radius: 999px;
+  overflow: hidden;
+  height: 0.6rem;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #22c55e);
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.student-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+button.link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #f97316;
+  font-size: 0.8rem;
+}
+
+.question-text {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.chat {
+  background: #020617;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.chat-messages {
+  flex: 1;
+  max-height: 260px;
+  overflow-y: auto;
+  padding-right: 0.4rem;
+}
+
+.chat-message {
+  font-size: 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.chat-author {
+  font-weight: 600;
+  margin-right: 0.35rem;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+}
+
+.empty-state {
+  max-width: 480px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}
