@@ -22,7 +22,7 @@ export function useSocket() {
 
   useEffect(() => {
     if (!socket) {
-      socket = io('http://localhost:4000');
+      socket = io('https://backendass.vercel.app/');
 
       socket.on('connect', () => {
         dispatch(socketConnected());
